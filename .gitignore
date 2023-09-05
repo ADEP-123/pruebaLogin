@@ -1,0 +1,4 @@
+backend/node_modules/
+backend/src/routes/dto/ts
+backend/tsconfig.json
+backend/package-lock.json
