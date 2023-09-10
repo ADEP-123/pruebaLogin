@@ -4,12 +4,17 @@ export default function Formulary(){
     async function extractInfo(event){
         const info = new FormData(event.target);
         const infoLogin = Object.fromEntries(info);
-        console.log(infoLogin);
         try {
-            const res = await(await fetch(`http://127.10.10.10:5010/campus/get/usuarios?user=${infoLogin.user_name}&pass=${infoLogin.user_pass}`,{
-               method: "GET",
+            const res = await(await fetch(`http://127.10.10.10:5010/campus/login`,{
+                method: "POST",
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(infoLogin)
             })).json();
             const token = await res.json()
+            console.log(token);
             localStorage.setItem('token', token.token );
         } catch (error) {
             console.error(error)
@@ -18,7 +23,8 @@ export default function Formulary(){
     
     return(
         <>
-            <div><h1>Formulary</h1>
+            <div>
+                <h1>Formulary</h1>
                 <form onSubmit={extractInfo}>
                     <ul>
                         <li>
@@ -33,9 +39,9 @@ export default function Formulary(){
                         </li>
                     </ul>
                     <ul>
-                    <li className="button">
-                        <button type="submit">Enviar</button>
-                    </li>
+                        <li className="button">
+                            <button type="submit">Enviar</button>
+                        </li>
                     </ul>
                 </form>
             </div>
