@@ -19,7 +19,7 @@ appToken.use("", async (req, res) => {
                 .setExpirationTime("60h")
                 .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
             req.data = jwt;
-            res.status(201).send({ status: 201, message: jwt });
+            res.status(201).send({ status: 201, token: jwt });
         } else {
             res.status(404).send({ status: 404, message: `no se encontro informacion de usuario y contraseña en el body` });
         }
