@@ -1,7 +1,7 @@
 import { getRolService } from "../services/getServices.js";
 
 export const getRolController = async (req, res, next) => {
-    const { user, pass } = req.body;
+    const { user, pass } = req.query;
     try {
         const result = await getRolService(user, pass);
         if (result.length != 0) {
