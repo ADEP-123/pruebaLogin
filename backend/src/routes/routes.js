@@ -8,7 +8,7 @@ import { authorizationMiddleware } from "../middleware/authorizationMiddleware.j
 const initApiRoutes = () => {
     const router = Router();
     router.use("/login", middlewareRateLimit, appToken)
-    router.use("/get", middlewareRateLimit, authorizationMiddleware,getInitRoute())
+    router.use("/get", middlewareRateLimit, authorizationMiddleware, getInitRoute())
     return router
 }
 

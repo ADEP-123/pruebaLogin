@@ -7,9 +7,13 @@ import { SignJWT } from 'jose';
 dotenv.config();
 const appToken = Router();
 
-appToken.use("", async (req, res) => {
+appToken.post("", async (req, res) => {
     try {
-        const { user, pass } = req.body
+        const { user_name: user, user_pass: pass } = req.body
+        req.body = {
+            user, 
+            pass
+        }
         if (user && pass) {
             const encoder = new TextEncoder();
             const jwtconstructor = new SignJWT(Object.assign({}, Object.assign(req.body)));
@@ -32,3 +36,4 @@ appToken.use("", async (req, res) => {
 export {
     appToken,
 };
+
