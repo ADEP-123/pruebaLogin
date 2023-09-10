@@ -1,14 +1,14 @@
 import { Router } from "express";
 import { getInitRoute } from "./getDataRoutes.js";
 import { middlewareRateLimit } from "../middleware/ratelimitMiddleware.js";
+import { appToken } from "../utils/tokenGenerator.js";
+import { authorizationMiddleware } from "../middleware/authorizationMiddleware.js";
 
 
 const initApiRoutes = () => {
     const router = Router();
-    // router.use("/login", (req, res, next) => {
-    //     res.send("hola putos")
-    // })
-    router.use("/get", middlewareRateLimit, getInitRoute())
+    router.use("/login", middlewareRateLimit, appToken)
+    router.use("/get", middlewareRateLimit, authorizationMiddleware,getInitRoute())
     return router
 }
 
