@@ -1,4 +1,4 @@
-# Ejercicio Manejo Insidencias Mongo
+# Ejercicio login React
 
 ## Descripcion
 
@@ -42,7 +42,6 @@ Ejercicio practico para aprendizaje de react con reacion de un login sencillo, c
 12. La consola le mostrara la direccion http donde esta corriendo el frontend
 13. Ingrese al link que proporciona el terminal
 
-
 ---
 
 ## Funcionamiento
@@ -64,7 +63,6 @@ El login cuanta con un sistema sencillo de acceso, este le requerira un usuario 
   }
 ```
 
-    
 ---
 
 # Creador:
