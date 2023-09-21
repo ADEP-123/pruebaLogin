@@ -8,7 +8,7 @@ export function Formulary({ onLogin }) {
     const infoLogin = Object.fromEntries(info);
     try {
       const res = await (
-        await fetch(`http://127.10.10.10:5010/campus/login`, {
+        await fetch(`http://192.168.129.72:5076/campus/login`, {
           method: "POST",
           headers: {
             Accept: "application/json",

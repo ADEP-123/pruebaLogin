@@ -12,7 +12,7 @@ export function Bienvenida({ nombre }) {
       };
       try {
         const result = await (
-          await fetch("http://127.10.10.10:5010/campus/get/usuarios", {
+          await fetch("http://192.168.129.72:5076/campus/get/usuarios", {
             method: "GET",
             headers,
           })
