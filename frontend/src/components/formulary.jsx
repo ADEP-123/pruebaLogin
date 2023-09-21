@@ -44,7 +44,7 @@ export function Formulary({ onLogin }) {
             <li>
               <label htmlFor="pass">Contraseña</label>
               <input
-                type="text"
+                type="password"
                 id="pass"
                 name="user_pass"
                 placeholder="password"
